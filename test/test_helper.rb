@@ -3,6 +3,7 @@ Coveralls.wear!
 
 require 'minitest/autorun'
 require 'minitest/spec'
+require 'minitest/hooks/default'
 
 require 'active_support/all'
 

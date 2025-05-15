@@ -19,11 +19,14 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.required_ruby_version = '>=2.2.2'
-  spec.add_dependency 'activesupport', '>= 4.1', '< 7.1'
+  spec.add_dependency 'activesupport', '>= 4.1', '< 8.0'
+  spec.add_dependency 'ostruct'
 
-  spec.add_development_dependency 'activesupport', '~> 4.1.0'
+  spec.add_development_dependency 'activesupport', '< 8.0'
   spec.add_development_dependency 'minitest', '~> 5.11'
+  spec.add_development_dependency 'minitest-hooks'
   spec.add_development_dependency 'coveralls', '~> 0'
-  spec.add_development_dependency 'bundler', '~> 1.6'
-  spec.add_development_dependency 'rake', '~> 10'
+  spec.add_development_dependency 'json', '~> 2.6'
+  spec.add_development_dependency 'bundler', '~> 2.6.6'
+  spec.add_development_dependency 'rake', '~> 13'
 end

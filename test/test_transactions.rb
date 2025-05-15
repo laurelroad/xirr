@@ -2,7 +2,12 @@ require_relative 'test_helper'
 
 describe 'Transaction' do
   before(:all) do
+    BigDecimal.limit(128)
     @t = Transaction.new(1000, date: Date.today)
+  end
+
+  after(:all) do
+    BigDecimal.limit(0)
   end
 
   it 'converts amount to float' do

@@ -1,6 +1,14 @@
 require_relative 'test_helper'
 
 describe 'Cashflows' do
+  before(:all) do
+    BigDecimal.limit(128)
+  end
+
+  after(:all) do
+    BigDecimal.limit(0)
+  end
+
   describe 'of an ok investment' do
     before(:all) do
       @cf = Cashflow.new
@@ -8,6 +16,8 @@ describe 'Cashflows' do
       @cf << Transaction.new(-600, date: '1990-01-01'.to_date)
       @cf << Transaction.new(-6000, date: '1995-01-01'.to_date)
     end
+
+
 
     it 'has a sum of its transactions' do
       assert_equal '-5600'.to_f, @cf.sum
